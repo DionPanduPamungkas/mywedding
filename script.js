@@ -348,11 +348,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     
-    // Request animation frame for performance
     requestAnimationFrame(() => {
       if (heroImg) {
-        // Move hero image down slightly as we scroll down (speed 0.4)
-        heroImg.style.transform = `scale(1.12) translateY(${scrollY * 0.4}px)`;
+        // Move hero image down slightly as we scroll down (speed 0.35)
+        heroImg.style.transform = `translateY(${scrollY * 0.35}px)`;
       }
       
       if (storyImg) {
@@ -363,7 +362,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           if (rect.top < window.innerHeight && rect.bottom > 0) {
             // Calculate relative scroll within the section
             const relativeScroll = window.innerHeight - rect.top;
-            storyImg.style.transform = `translateY(${relativeScroll * 0.15}px)`;
+            storyImg.style.transform = `translateY(${relativeScroll * 0.2}px)`;
           }
         }
       }
